@@ -188,6 +188,36 @@ section:nth-of-type(even) {
     font-size: 0.95rem;
   }
 
+    .formation-list {
+  display: grid;
+  gap: 14px;
+}
+
+.formation-item {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 16px 18px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.formation-item:hover {
+  transform: translateY(-2px);
+  border-color: #38bdf8;
+  background: #172033;
+}
+
+.formation-item h3 {
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+  color: #e2e8f0;
+}
+
+.formation-meta {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
   .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -454,13 +484,24 @@ section:nth-of-type(even) {
   </section>
 
   <section id="formation">
-    <h2>Formation</h2>
-    <div class="card">
-      <p><strong>BTS Informatique</strong> - Rouen (2026 - 2027)</p>
-      <p><strong>BTS SIO SISR</strong> - 1100 heures en distanciel (2024 - 2025)</p>
-      <p><strong>Bac Pro Vente</strong> - CFAIE Val de Reuil (2020 - 2022)</p>
+  <h2>Formation</h2>
+  <div class="card formation-list">
+    <div class="formation-item">
+      <h3>BTS Informatique</h3>
+      <p class="formation-meta">Rouen • 2026 - 2027</p>
     </div>
-  </section>
+
+    <div class="formation-item">
+      <h3>BTS SIO SISR</h3>
+      <p class="formation-meta">1100 heures en distanciel • 2024 - 2025</p>
+    </div>
+
+    <div class="formation-item">
+      <h3>Bac Pro Vente</h3>
+      <p class="formation-meta">CFAIE Val de Reuil • 2020 - 2022</p>
+    </div>
+  </div>
+</section>
   
   <section id="skills">
     <h2>Compétences</h2>
