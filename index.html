@@ -176,10 +176,21 @@ section:nth-of-type(even) {
 }
 
   .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+  display: grid;
+  gap: 18px;
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #cbd5e1;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
   .skill {
     background: #334155;
@@ -504,19 +515,38 @@ section:nth-of-type(even) {
 </section>
   
   <section id="skills">
-    <h2>Compétences</h2>
-    <div class="card skills">
-      <span class="skill">Réseaux L2/L3</span>
-      <span class="skill">IPv4 / CIDR / VLSM</span>
-      <span class="skill">VLAN</span>
-      <span class="skill">Linux Ubuntu</span>
-      <span class="skill">Linux Mint</span>
-      <span class="skill">Virtualisation</span>
-      <span class="skill">VMware Workstation Pro</span>
-      <span class="skill">Wireshark</span>
-      <span class="skill">Cisco Packet Tracer</span>
+  <h2>Compétences</h2>
+  <div class="card skills">
+
+    <div class="skill-group">
+      <h3>Réseaux</h3>
+      <div class="skill-tags">
+        <span class="skill">Réseaux L2/L3</span>
+        <span class="skill">IPv4 / CIDR / VLSM</span>
+        <span class="skill">VLAN</span>
+      </div>
     </div>
-  </section>
+
+    <div class="skill-group">
+      <h3>Systèmes</h3>
+      <div class="skill-tags">
+        <span class="skill">Linux Ubuntu</span>
+        <span class="skill">Linux Mint</span>
+        <span class="skill">Virtualisation</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Outils</h3>
+      <div class="skill-tags">
+        <span class="skill">VMware Workstation Pro</span>
+        <span class="skill">Wireshark</span>
+        <span class="skill">Cisco Packet Tracer</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
    <section id="projects">
   <h2>Projets</h2>
