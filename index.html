@@ -204,6 +204,47 @@ section:nth-of-type(even) {
     font-weight: bold;
   }
 
+.experience-card h3 {
+  margin-bottom: 12px;
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.experience-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  font-size: 0.92rem;
+}
+
+.experience-card ul {
+  margin-top: 8px;
+}
+
+.experience-card li {
+  color: #dbe4f0;
+}
+
+@media (max-width: 600px) {
+  .experience-meta {
+    gap: 8px;
+  }
+
+  .experience-badge {
+    font-size: 0.85rem;
+    padding: 6px 9px;
+  }
+}
+
   ul {
     padding-left: 20px;
   }
@@ -466,35 +507,41 @@ section:nth-of-type(even) {
 <section id="experience-informatique">
   <h2>Expérience Informatique</h2>
 
-  <div class="card">
+  <div class="card experience-card">
     <h3>Stage - Systèmes & Réseaux - Assystem</h3>
-    <p><strong>Ville :</strong> Montigny-le-Bretonneux (78)</p>
-    <p><strong>Période :</strong> Janv. 2025 - Mars 2025</p>
 
-    <ul style="padding-left: 20px; margin-top: 15px;">
-      <li style="margin-bottom: 8px;">Participation à l'installation et à la configuration de switchs Cisco MS390 en environnement professionnel.</li>
-      <li style="margin-bottom: 8px;">Modélisation et test de topologies réseau sur Cisco Packet Tracer pour préparer des évolutions d'infrastructure.</li>
-      <li style="margin-bottom: 8px;">Déploiement de KeePass et rédaction d'une documentation utilisateur.</li>
-      <li style="margin-bottom: 8px;">Initiation au diagnostic réseau : tests de connectivité et vérification de configuration.</li>
-      <li style="margin-bottom: 8px;">Découverte et utilisation d'environnements Linux (Ubuntu).</li>
+    <div class="experience-meta">
+      <span class="experience-badge">Montigny-le-Bretonneux (78)</span>
+      <span class="experience-badge">Janv. 2025 - Mars 2025</span>
+    </div>
+
+    <ul>
+      <li>Participation à l'installation et à la configuration de switchs Cisco MS390 en environnement professionnel.</li>
+      <li>Modélisation et test de topologies réseau sur Cisco Packet Tracer pour préparer des évolutions d'infrastructure.</li>
+      <li>Déploiement de KeePass et rédaction d'une documentation utilisateur.</li>
+      <li>Initiation au diagnostic réseau : tests de connectivité et vérification de configuration.</li>
+      <li>Découverte et utilisation d'environnements Linux (Ubuntu).</li>
     </ul>
   </div>
 
-  <div class="card">
+  <div class="card experience-card">
     <h3>Stage - Systèmes & Réseaux - Assystem</h3>
-    <p><strong>Ville :</strong> Montigny-le-Bretonneux (78)</p>
-    <p><strong>Période :</strong> Janv. 2024 - Févr. 2024</p>
 
-    <ul style="padding-left: 20px; margin-top: 15px;">
-      <li style="margin-bottom: 8px;">Création, paramétrage et déploiement d'une machine virtuelle.</li>
-      <li style="margin-bottom: 8px;">Installation d'un système d'exploitation en environnement virtualisé.</li>
-      <li style="margin-bottom: 8px;">Découverte de l'architecture réseau d'une infrastructure multi-sites.</li>
-      <li style="margin-bottom: 8px;">Compréhension du rôle des switches dans la communication réseau.</li>
-      <li style="margin-bottom: 8px;">Acquisition des bases de l'adressage réseau : IP et MAC.</li>
-      <li style="margin-bottom: 8px;">Réalisation de simulations réseau avec Cisco Packet Tracer.</li>
+    <div class="experience-meta">
+      <span class="experience-badge">Montigny-le-Bretonneux (78)</span>
+      <span class="experience-badge">Janv. 2024 - Févr. 2024</span>
+    </div>
+
+    <ul>
+      <li>Création, paramétrage et déploiement d'une machine virtuelle.</li>
+      <li>Installation d'un système d'exploitation en environnement virtualisé.</li>
+      <li>Découverte de l'architecture réseau d'une infrastructure multi-sites.</li>
+      <li>Compréhension du rôle des switches dans la communication réseau.</li>
+      <li>Acquisition des bases de l'adressage réseau : IP et MAC.</li>
+      <li>Réalisation de simulations réseau avec Cisco Packet Tracer.</li>
     </ul>
   </div>
-</section> 
+</section>
 
   <section id="other-experience">
   <h2>Autres expériences professionnelles</h2>
