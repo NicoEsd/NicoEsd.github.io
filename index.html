@@ -515,6 +515,28 @@
   const scrollTopBtn = document.getElementById("scrollTopBtn");
   const mainNav = document.getElementById("mainNav");
   const floatingNav = document.getElementById("floatingNav");
+  const sections = document.querySelectorAll("section[id]");
+  const floatingLinks = document.querySelectorAll("#floatingNav a");
+
+  function updateActiveFloatingLink() {
+    let currentId = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 140;
+      if (window.scrollY >= sectionTop) {
+        currentId = section.getAttribute("id");
+      }
+    });
+
+    floatingLinks.forEach(link => {
+      const target = link.getAttribute("href");
+      if (target === "#" + currentId) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > 300) {
@@ -530,6 +552,8 @@
     } else {
       floatingNav.classList.remove("show");
     }
+
+    updateActiveFloatingLink();
   });
 
   scrollTopBtn.addEventListener("click", function () {
@@ -538,6 +562,8 @@
       behavior: "smooth"
     });
   });
+
+  updateActiveFloatingLink();
 </script>
 </body>
 </html>
