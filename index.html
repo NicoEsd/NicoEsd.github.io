@@ -95,12 +95,30 @@
   }
 
   .card {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 14px;
-    margin-bottom: 20px;
-    border: 1px solid #334155;
-  }
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #334155;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  border-color: #475569;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
     .contact-intro {
   color: #94a3b8;
   margin-bottom: 18px;
@@ -573,6 +591,7 @@
   const floatingNav = document.getElementById("floatingNav");
   const sections = document.querySelectorAll("section[id]");
   const floatingLinks = document.querySelectorAll("#floatingNav a");
+  const revealElements = document.querySelectorAll("section, .card");
 
   function updateActiveFloatingLink() {
     let currentId = "";
@@ -594,6 +613,21 @@
     });
   }
 
+  function revealOnScroll() {
+    revealElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (elementTop < windowHeight - 80) {
+        element.classList.add("visible");
+      }
+    });
+  }
+
+  revealElements.forEach(element => {
+    element.classList.add("reveal");
+  });
+
   window.addEventListener("scroll", function () {
     if (window.scrollY > 300) {
       scrollTopBtn.style.display = "block";
@@ -610,6 +644,7 @@
     }
 
     updateActiveFloatingLink();
+    revealOnScroll();
   });
 
   scrollTopBtn.addEventListener("click", function () {
@@ -620,6 +655,7 @@
   });
 
   updateActiveFloatingLink();
+  revealOnScroll();
 </script>
 </body>
 </html>
