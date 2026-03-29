@@ -101,6 +101,53 @@
     margin-bottom: 20px;
     border: 1px solid #334155;
   }
+    .contact-intro {
+  color: #94a3b8;
+  margin-bottom: 18px;
+}
+
+.contact-meta {
+  display: grid;
+  gap: 8px;
+  color: #cbd5e1;
+  margin-bottom: 18px;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  background: #0f172a;
+  color: #e2e8f0;
+  text-decoration: none;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  background: #334155;
+  border-color: #38bdf8;
+}
+
+@media (max-width: 600px) {
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .contact-btn {
+    width: 100%;
+  }
+}
 
   .skills {
     display: flex;
@@ -498,11 +545,20 @@
   <section id="contact">
   <h2>Contact</h2>
   <div class="card">
-    <p>Email : <a href="mailto:nico.esnard@gmail.com" style="color:#38bdf8;">nico.esnard@gmail.com</a></p>
-    <p>Localisation : Darnétal (76160)</p>
-    <p>GitHub : <a href="https://github.com/NicoEsd" target="_blank" style="color:#38bdf8;">github.com/NicoEsd</a></p>
-    <p>Portfolio : <a href="https://nicoesd.github.io" target="_blank" style="color:#38bdf8;">nicoesd.github.io</a></p>
-    <p>Linkedin : <a href="https://www.linkedin.com/in/nicolas-esd-12j12m2000a/" target="_blank" style="color:#38bdf8;">Linkedin Nicolas Esnard</a></p>
+    <p class="contact-intro">
+      Disponible pour une alternance en systèmes, réseaux et cybersécurité.
+    </p>
+
+    <div class="contact-meta">
+      <p><strong>Email :</strong> nico.esnard@gmail.com</p>
+      <p><strong>Localisation :</strong> Darnétal (76160)</p>
+    </div>
+
+    <div class="contact-actions">
+      <a class="contact-btn" href="mailto:nico.esnard@gmail.com">M'envoyer un email</a>
+      <a class="contact-btn" href="https://github.com/NicoEsd" target="_blank">Voir mon GitHub</a>
+      <a class="contact-btn" href="https://www.linkedin.com/in/nicolas-esd-12j12m2000a/" target="_blank">Voir mon LinkedIn</a>
+    </div>
   </div>
 </section>
 
