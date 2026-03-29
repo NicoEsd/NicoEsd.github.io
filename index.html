@@ -506,12 +506,22 @@
   <button id="scrollTopBtn" title="Retour en haut">↑</button>
   <script>
   const scrollTopBtn = document.getElementById("scrollTopBtn");
+  const mainNav = document.getElementById("mainNav");
+  const floatingNav = document.getElementById("floatingNav");
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > 300) {
       scrollTopBtn.style.display = "block";
     } else {
       scrollTopBtn.style.display = "none";
+    }
+
+    const navBottom = mainNav.getBoundingClientRect().bottom;
+
+    if (navBottom <= 0) {
+      floatingNav.classList.add("show");
+    } else {
+      floatingNav.classList.remove("show");
     }
   });
 
