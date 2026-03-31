@@ -463,6 +463,37 @@ section:nth-of-type(even) {
     padding: 7px 10px;
   }
 }
+    .project-card h3 {
+  margin-bottom: 10px;
+}
+
+.project-intro {
+  color: #cbd5e1;
+  margin-bottom: 14px;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.project-card ul {
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
 </style>
 </head>
 <body>
@@ -545,24 +576,24 @@ section:nth-of-type(even) {
     </div>
 
     <div class="skill-group">
-      <h3>Sécurité</h3>
-      <div class="skill-tags">
-        <span class="skill">Sécurité réseau</span>
-        <span class="skill">Gestion des accès</span>
-        <span class="skill">Sauvegarde</span>
-        <span class="skill">Bonnes Pratiques</span>
-      </div>
-    </div>
+  <h3>Sécurité</h3>
+  <div class="skill-tags">
+    <span class="skill">Sécurité réseau</span>
+    <span class="skill">Gestion des accès</span>
+    <span class="skill">Sauvegarde</span>
+    <span class="skill">Bonnes pratiques</span>
+  </div>
+</div>
 
-    <div class="skill-group">
-      <h3>Outils</h3>
-      <div class="skill-tags">
-        <span class="skill">VMware Workstation Pro</span>
-        <span class="skill">Wireshark</span>
-        <span class="skill">Cisco Packet Tracer</span>
-        <span class="skill">PowerShell</span>
-      </div>
-    </div>
+<div class="skill-group">
+  <h3>Outils</h3>
+  <div class="skill-tags">
+    <span class="skill">VMware Workstation Pro</span>
+    <span class="skill">Wireshark</span>
+    <span class="skill">Cisco Packet Tracer</span>
+    <span class="skill">PowerShell</span>
+  </div>
+</div>
 
   </div>
 </section>
@@ -571,24 +602,109 @@ section:nth-of-type(even) {
   <h2>Projets</h2>
   <div class="projects">
 
-    <div class="card project">
-      <h3>Configuration de switchs Cisco MS390</h3>
-      <p>Participation à l'installation et à la configuration de switchs Cisco MS390 en environnement professionnel.</p>
+    <div class="card project-card">
+      <h3>Déploiement de switchs Cisco MS390</h3>
+
+      <div class="project-meta">
+        <span class="project-badge">Cisco</span>
+        <span class="project-badge">Réseau</span>
+        <span class="project-badge">Stage</span>
+      </div>
+
+      <p class="project-intro">
+        Participation à l’installation et à la configuration de switchs Cisco MS390 en environnement professionnel.
+      </p>
+
+      <ul>
+        <li>Découverte de la configuration initiale et de l’intégration en infrastructure existante.</li>
+        <li>Vérification de la connectivité et du bon fonctionnement réseau.</li>
+        <li>Observation des bonnes pratiques de déploiement en entreprise.</li>
+      </ul>
+
+      <div class="skill-tags">
+        <span class="skill">Cisco</span>
+        <span class="skill">Switching</span>
+        <span class="skill">Réseau</span>
+      </div>
     </div>
 
-    <div class="card project">
-      <h3>Simulation et topologies réseau</h3>
-      <p>Conception, modélisation et validation de topologies réseau avec Cisco Packet Tracer pour préparer des évolutions d'infrastructure.</p>
+    <div class="card project-card">
+      <h3>Simulation de topologies réseau</h3>
+
+      <div class="project-meta">
+        <span class="project-badge">Packet Tracer</span>
+        <span class="project-badge">Réseaux</span>
+        <span class="project-badge">Formation</span>
+      </div>
+
+      <p class="project-intro">
+        Conception et test de topologies réseau pour comprendre l’organisation et le fonctionnement d’une infrastructure.
+      </p>
+
+      <ul>
+        <li>Création de schémas réseau avec plusieurs équipements.</li>
+        <li>Tests de communication et validation de la logique d’adressage.</li>
+        <li>Travail sur la compréhension du routage et du rôle des équipements.</li>
+      </ul>
+
+      <div class="skill-tags">
+        <span class="skill">Packet Tracer</span>
+        <span class="skill">Adressage IP</span>
+        <span class="skill">Routage</span>
+      </div>
     </div>
 
-    <div class="card project">
-      <h3>Virtualisation et Linux</h3>
-      <p>Création de machines virtuelles sous VMware Workstation Pro, installation de Windows 11 et Ubuntu, et premières configurations en environnement virtualisé.</p>
+    <div class="card project-card">
+      <h3>Serveur Linux en environnement virtualisé</h3>
+
+      <div class="project-meta">
+        <span class="project-badge">Linux</span>
+        <span class="project-badge">VMware</span>
+        <span class="project-badge">Projet perso</span>
+      </div>
+
+      <p class="project-intro">
+        Mise en place d’un serveur Linux dans un laboratoire virtualisé avec administration distante et sécurisation de base.
+      </p>
+
+      <ul>
+        <li>Création de la machine virtuelle et configuration réseau avec IP fixe.</li>
+        <li>Mise en place de l’accès SSH, des mises à jour système et du pare-feu UFW.</li>
+        <li>Contrôle des services, vérification réseau et documentation technique.</li>
+      </ul>
+
+      <div class="skill-tags">
+        <span class="skill">Linux</span>
+        <span class="skill">SSH</span>
+        <span class="skill">UFW</span>
+        <span class="skill">Virtualisation</span>
+      </div>
     </div>
 
-    <div class="card project">
+    <div class="card project-card">
       <h3>Déploiement de KeePass</h3>
-      <p>Participation au déploiement de KeePass et rédaction d'une documentation utilisateur pour faciliter sa prise en main en environnement professionnel.</p>
+
+      <div class="project-meta">
+        <span class="project-badge">Sécurité</span>
+        <span class="project-badge">Documentation</span>
+        <span class="project-badge">Stage</span>
+      </div>
+
+      <p class="project-intro">
+        Participation au déploiement de KeePass et création d’une documentation utilisateur pour faciliter sa prise en main.
+      </p>
+
+      <ul>
+        <li>Installation et préparation de l’outil dans un cadre professionnel.</li>
+        <li>Rédaction d’une documentation claire pour les utilisateurs.</li>
+        <li>Sensibilisation à la gestion sécurisée des mots de passe.</li>
+      </ul>
+
+      <div class="skill-tags">
+        <span class="skill">KeePass</span>
+        <span class="skill">Sécurité</span>
+        <span class="skill">Support utilisateur</span>
+      </div>
     </div>
 
   </div>
