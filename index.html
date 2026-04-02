@@ -622,8 +622,8 @@ section:nth-of-type(even) {
     </p>
 
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#projects">Voir mes projets</a>
-      <a class="btn btn-secondary" href="CV_Alternance_Informatique_Nicolas_Esnard.pdf" target="_blank" rel="noopener noreferrer">Voir mon CV</a>
+      <a class="btn btn-secondary" href="#projects">Voir mes projets</a>
+      <a class="btn btn-primary" href="CV_Alternance_Informatique_Nicolas_Esnard.pdf" target="_blank" rel="noopener noreferrer">Voir mon CV</a>
       <a class="btn btn-secondary" href="#contact">Me contacter</a>
     </div>
   </div>
@@ -885,13 +885,13 @@ section:nth-of-type(even) {
     </p>
 
     <div class="recommendation-preview">
-      <a href="Lettre de recommandation.pdf" target="_blank" rel="noopener noreferrer">
+      <a href="Lettre-de-recommandation-assystem.pdf" target="_blank" rel="noopener noreferrer">
         <img src="lettre-recommandation-assystem.png" alt="Aperçu de la lettre de recommandation Assystem pour Nicolas Esnard">
       </a>
     </div>
 
     <div class="recommendation-actions">
-      <a class="contact-btn" href="Lettre de recommandation.pdf" target="_blank" rel="noopener noreferrer">
+      <a class="contact-btn" href="Lettre-de-recommandation-assystem.pdf" target="_blank" rel="noopener noreferrer">
         Voir la lettre
       </a>
     </div>
@@ -1077,25 +1077,27 @@ section:nth-of-type(even) {
     });
   });
 
-copyEmailBtn.addEventListener("click", async function () {
-  const email = emailText.textContent.trim();
+if (copyEmailBtn && emailText) {
+  copyEmailBtn.addEventListener("click", async function () {
+    const email = emailText.textContent.trim();
 
-  try {
-    await navigator.clipboard.writeText(email);
-    copyEmailBtn.textContent = "Copié";
-    copyEmailBtn.classList.add("copied");
+    try {
+      await navigator.clipboard.writeText(email);
+      copyEmailBtn.textContent = "Copié";
+      copyEmailBtn.classList.add("copied");
 
-    setTimeout(() => {
-      copyEmailBtn.textContent = "Copier";
-      copyEmailBtn.classList.remove("copied");
-    }, 1600);
-  } catch (error) {
-    copyEmailBtn.textContent = "Échec";
-    setTimeout(() => {
-      copyEmailBtn.textContent = "Copier";
-    }, 1600);
-  }
-});
+      setTimeout(() => {
+        copyEmailBtn.textContent = "Copier";
+        copyEmailBtn.classList.remove("copied");
+      }, 1600);
+    } catch (error) {
+      copyEmailBtn.textContent = "Échec";
+      setTimeout(() => {
+        copyEmailBtn.textContent = "Copier";
+      }, 1600);
+    }
+  });
+}
     
   revealOnScroll();
 </script>
