@@ -6,6 +6,8 @@
   <meta name="description" content="Portfolio de Nicolas Esnard, étudiant BTS Informatique, spécialisé en systèmes, réseaux et cybersécurité." />
   <title>Nicolas Esnard - Portfolio</title>
   <style>
+
+  
   * {
     box-sizing: border-box;
     margin: 0;
@@ -195,6 +197,37 @@ section:nth-of-type(even) {
   margin-bottom: 18px;
 }
 
+    .contact-email-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.copy-email-btn {
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #cffafe;
+  background: transparent;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.copy-email-btn:hover {
+  background: #1e293b;
+  border-color: #22d3ee;
+  transform: translateY(-1px);
+}
+
+.copy-email-btn.copied {
+  background: #083344;
+  border-color: #22d3ee;
+  color: #ecfeff;
+}
+    
 .contact-actions {
   display: flex;
   flex-wrap: wrap;
@@ -972,7 +1005,12 @@ section:nth-of-type(even) {
     </p>
 
     <div class="contact-meta">
-      <p><strong>Email :</strong> nico.esnard@gmail.com</p>
+      <p class="contact-email-row">
+        <strong>Email :</strong>
+        <span id="emailText">nico.esnard@gmail.com</span>
+        <button type="button" class="copy-email-btn" id="copyEmailBtn">Copier</button>
+      </p>     
+      
       <p><strong>Localisation :</strong> Darnétal (76160)</p>
     </div>
 
@@ -994,6 +1032,8 @@ section:nth-of-type(even) {
   <script>
   const scrollTopBtn = document.getElementById("scrollTopBtn");
   const revealElements = document.querySelectorAll("section, .card");
+  const copyEmailBtn = document.getElementById("copyEmailBtn");
+  const emailText = document.getElementById("emailText");
 
   function revealOnScroll() {
     revealElements.forEach(element => {
@@ -1037,6 +1077,26 @@ section:nth-of-type(even) {
     });
   });
 
+copyEmailBtn.addEventListener("click", async function () {
+  const email = emailText.textContent.trim();
+
+  try {
+    await navigator.clipboard.writeText(email);
+    copyEmailBtn.textContent = "Copié";
+    copyEmailBtn.classList.add("copied");
+
+    setTimeout(() => {
+      copyEmailBtn.textContent = "Copier";
+      copyEmailBtn.classList.remove("copied");
+    }, 1600);
+  } catch (error) {
+    copyEmailBtn.textContent = "Échec";
+    setTimeout(() => {
+      copyEmailBtn.textContent = "Copier";
+    }, 1600);
+  }
+});
+    
   revealOnScroll();
 </script>
   
