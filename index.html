@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Nicolas Esnard, étudiant BTS Informatique, spécialisé en systèmes, réseaux et cybersécurité." />
   <title>Nicolas Esnard - Portfolio</title>
   <style>
   * {
@@ -27,6 +28,22 @@ body {
   overflow-x: hidden;
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: #38bdf8;
+  color: #0f172a;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  z-index: 2000;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
   a, p, h1, h2, h3, li, span {
     overflow-wrap: anywhere;
   }
@@ -96,6 +113,14 @@ body {
   transform: translateY(-1px);
 }
 
+#mainNav a:focus-visible,
+.btn:focus-visible,
+.contact-btn:focus-visible,
+#scrollTopBtn:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+    
   section {
   width: min(100%, 1050px);
   margin: 38px auto;
@@ -146,6 +171,18 @@ section:nth-of-type(even) {
   opacity: 1;
   transform: translateY(0);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+    
     .contact-intro {
   color: #94a3b8;
   margin-bottom: 18px;
@@ -500,7 +537,8 @@ section:nth-of-type(even) {
 </style>
 </head>
 <body>
-
+  <a class="skip-link" href="#about">Aller au contenu</a>
+  
   <header class="hero">
   <div class="hero-content">
     <span class="hero-badge">Recherche d'alternance • BTS Informatique</span>
@@ -517,7 +555,7 @@ section:nth-of-type(even) {
   </div>
 </header>
 
-  <nav id="mainNav">
+<nav id="mainNav" aria-label="Navigation principale"> 
   <a href="#about">À propos</a>
   <a href="#formation">Formation</a>
   <a href="#skills">Compétences</a>
@@ -878,7 +916,8 @@ section:nth-of-type(even) {
     <p>© 2026 Nicolas Esnard - Portfolio</p>
   </footer>
 
-  <button id="scrollTopBtn" title="Retour en haut">↑</button>
+<button id="scrollTopBtn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+  
   <script>
   const scrollTopBtn = document.getElementById("scrollTopBtn");
   const revealElements = document.querySelectorAll("section, .card");
@@ -898,14 +937,25 @@ section:nth-of-type(even) {
     element.classList.add("reveal");
   });
 
-  window.addEventListener("scroll", function () {
+  let scrollTicking = false;
+
+  function onScroll() {
     if (window.scrollY > 300) {
       scrollTopBtn.style.display = "block";
     } else {
       scrollTopBtn.style.display = "none";
     }
+
     revealOnScroll();
-  });
+    scrollTicking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(onScroll);
+      scrollTicking = true;
+    }
+  }, { passive: true });
 
   scrollTopBtn.addEventListener("click", function () {
     window.scrollTo({
@@ -916,5 +966,6 @@ section:nth-of-type(even) {
 
   revealOnScroll();
 </script>
+  
 </body>
 </html>
